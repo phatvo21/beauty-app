@@ -73,7 +73,7 @@ const Treatments = () => {
                 <FadeInScale className='w-full lg:w-1/2 h-[270px] lg:h-[450px] relative overflow-hidden'>
                     <img
                         src={flower}
-                        alt="Elle Hive Treatments Menu"
+                        alt="Grace Treatments Menu"
                         className="w-full h-full object-cover object-center"
                     />
                 </FadeInScale>
@@ -82,7 +82,7 @@ const Treatments = () => {
                         <span className='italic font-semibold'>Personalised</span> treatments, <span className='italic font-semibold'>tailored</span> to you
                     </FadeInScale>
                     <FadeInScale delay={0.2} className='text-base lg:text-xl max-w-md'>
-                        Discover the full range of aesthetic treatments available at Elle Hive, each tailored to enhance your natural beauty.
+                        Discover the full range of aesthetic treatments available at Grace, each tailored to enhance your natural beauty.
                     </FadeInScale>
                 </div>
             </div>
@@ -640,7 +640,7 @@ const Treatments = () => {
                             <p>
                                 Welcome to the ultimate in personalised care, where the latest in facial treatments are designed to enhance your natural beauty.                            </p>
                             <p>
-                                At Elle Hive, we combine expertise with a touch of luxury, offering a selection of advanced facials that are tailored to suit your individual skin needs. While Elle Hive offers a variety of treatments, these advanced facials are the ones that truly make a noticeable difference to the skin.                            </p>
+                                At Grace, we combine expertise with a touch of luxury, offering a selection of advanced facials that are tailored to suit your individual skin needs. While Grace offers a variety of treatments, these advanced facials are the ones that truly make a noticeable difference to the skin.                            </p>
                             <p>
                                 Whether you're looking to address specific concerns or simply indulge in a rejuvenating experience, We’ve curated a collection of treatments that prioritize both relaxation and visible results.                            </p>
 
@@ -1033,7 +1033,7 @@ const Treatments = () => {
 
                             <h3 className='text-lg font-semibold mb-2'>Treatment Details:</h3>
                             <p className='text-sm mb-6 text-gray-700'>
-                                At Elle Hive, makeup is approached with a less-is-more philosophy—prioritising luminous skin, soft definition, and the kind of effortless beauty that enhances rather than hides. Whether you're preparing for a relaxed day event, a glamorous evening, or a special occasion like a wedding, the makeup is always tailored to feel like you—just elevated. Elle can craft the entire look based on her signature natural style, or work with your ideas and inspirations to bring a shared vision to life.  It’s makeup designed to feel comfortable, look timeless, and photograph beautifully.
+                                At Grace, makeup is approached with a less-is-more philosophy—prioritising luminous skin, soft definition, and the kind of effortless beauty that enhances rather than hides. Whether you're preparing for a relaxed day event, a glamorous evening, or a special occasion like a wedding, the makeup is always tailored to feel like you—just elevated. Elle can craft the entire look based on her signature natural style, or work with your ideas and inspirations to bring a shared vision to life.  It’s makeup designed to feel comfortable, look timeless, and photograph beautifully.
                             </p>
                             <p className='text-sm mb-6 text-gray-700'>Note: This service can also be provided at your chosen location for added comfort and convenience; a travel fee will apply and is discussed individually during booking. </p>
                             <p className='text-sm mb-6 text-gray-700'>Makeup pricing varies depending on the day and time of your appointment: £50 for bookings Monday to Friday between 9:00 AM and 4:00 PM, and £80 for appointments after 4:00 PM or on Saturdays.</p>
@@ -1097,7 +1097,7 @@ const Treatments = () => {
                             </p>
 
                             <h3 className='text-lg font-semibold mb-2'>Treatment Details:</h3>
-                            <p className='text-sm mb-6 text-gray-700'>Brow shaping at Elle Hive is a precise and tailored treatment designed to frame your face and enhance your natural features. Using professional brow mapping techniques, Elle carefully measures and outlines the ideal brow shape suited to your facial structure. Unwanted hair is removed through gentle plucking for clean, defined lines, while dermaplaning around the brow area smooths the skin and enhances the overall finish. The result is a polished, balanced brow that complements your look effortlessly.</p>
+                            <p className='text-sm mb-6 text-gray-700'>Brow shaping at Grace is a precise and tailored treatment designed to frame your face and enhance your natural features. Using professional brow mapping techniques, Elle carefully measures and outlines the ideal brow shape suited to your facial structure. Unwanted hair is removed through gentle plucking for clean, defined lines, while dermaplaning around the brow area smooths the skin and enhances the overall finish. The result is a polished, balanced brow that complements your look effortlessly.</p>
                             <h3 className='text-lg font-semibold mb-2'>Revision Appointment:</h3>
                             <ul className='list-disc list-inside space-y-1 text-sm text-gray-700 ml-4 mb-4'>
                                 <li>To maintain good results recommended <span className='font-semibold italic'>every 4 weeks.</span></li>

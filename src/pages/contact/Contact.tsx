@@ -8,7 +8,7 @@ const CONTACT_DATA = [
         content: (
             <FadeInScale className="mx-6">
                 <p>
-                    Elle Hive provides convenient on-site parking with plenty of space available.
+                    Grace provides convenient on-site parking with plenty of space available.
                     The parking area is well-maintained, and there are no restrictions or fees.
                 </p>
             </FadeInScale>
@@ -20,7 +20,7 @@ const CONTACT_DATA = [
         title: "Uber / Taxi",
         content: (
             <FadeInScale className="mx-6">
-                <p>Uber and taxi services are available in the Leeds and Bradford area, providing a convenient way to travel to Elle Hive. You can easily book an Uber/taxi for a pickup or drop-off right outside the location.</p>
+                <p>Uber and taxi services are available in the Leeds and Bradford area, providing a convenient way to travel to Grace. You can easily book an Uber/taxi for a pickup or drop-off right outside the location.</p>
             </FadeInScale>
         ),
     },

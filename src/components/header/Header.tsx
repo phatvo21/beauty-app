@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FadeInScale from "../animations/FadeInScale.js";
 import { useLocation, Link } from "react-router-dom";
-
+import logoBg from '../../assets/images/logoBg.png';
 type NavItemChild = {
   name: string;
   href: string;
@@ -246,7 +246,7 @@ const Header = () => {
               <FadeInScale>
                 <img
                   className="h-auto w-full rounded-lg"
-                  src="https://images.squarespace-cdn.com/content/v1/688bbacaa3564c7d139a436e/1753987810703-FIFC2FZ91XWGB047FP12/Elle+Logo.png?format=1500w"
+                  src={logoBg}
                   alt="Elle Logo"
                 />
               </FadeInScale>

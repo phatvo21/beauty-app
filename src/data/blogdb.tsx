@@ -349,7 +349,7 @@ export const BLOG_POSTS: BlogPost[] = [
             <FadeInScale className="anti-wrinkle-info text-sm lg:text-base">
                 <h1 className="font-semibold text-xl mb-4">Injecting Confidence, One Sip at a Time</h1>
                 <p>
-                    A cheeky nod to confidence-boosting treatments — anti-wrinkle injections done safely, professionally, and with style at Elle Hive.
+                    A cheeky nod to confidence-boosting treatments — anti-wrinkle injections done safely, professionally, and with style at Grace.
                 </p>
 
                 <h2 className="font-semibold text-xl mb-4">How to Get the Best (and Safest) Results From Your Treatment</h2>

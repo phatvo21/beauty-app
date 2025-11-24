@@ -7,7 +7,7 @@ const TERMS_DATA = [
         title: 'General Information',
         content: (
             <FadeInScale className="px-8">
-                <p>Elle Hive provides professional beauty and aesthetic services, including but not limited to permanent makeup, paramedical tattooing, facials, injectable treatments, and other beauty procedures. All treatments are carried out by trained professionals and require consultation and consent prior to the appointment.</p>
+                <p>Grace provides professional beauty and aesthetic services, including but not limited to permanent makeup, paramedical tattooing, facials, injectable treatments, and other beauty procedures. All treatments are carried out by trained professionals and require consultation and consent prior to the appointment.</p>
                 <p>No Food, Guests, Children, or Pets Only the client receiving treatment is allowed in the studio. If you have a medical alert service dog, please let us know in advance. Emotional support animals and pets are not allowed.</p>
 
                 <h4 className="font-semibold mt-4">Restrictions</h4>
@@ -23,7 +23,7 @@ const TERMS_DATA = [
                 <p>Appointments are scheduled in blocks. Check your booking for the estimated time, and plan accordingly. Treatments cannot be interrupted.</p>
 
                 <h4 className="font-semibold mt-4">Appointment Changes</h4>
-                <p>Elle Hive may adjust your appointment date or time. You'll be notified via email if changes are needed.</p>
+                <p>Grace may adjust your appointment date or time. You'll be notified via email if changes are needed.</p>
             </FadeInScale>
         ),
         defaultOpen: true
@@ -67,7 +67,7 @@ const TERMS_DATA = [
     { id: 'refund', title: 'Refund Policy', content: <FadeInScale className='mx-8'>We do not offer refunds on any services, deposits, or completed treatments. Results may vary depending on individual skin types, health conditions, and aftercare adherence.</FadeInScale> },
     {
         id: 'price', title: 'Price Adjustment', content: <FadeInScale className='mx-8'>
-            <p>        At Elle Hive, we are committed to offering high-quality treatments, premium products, and continued education to deliver the best possible service. As with most businesses, periodic price increases may occur, typically on an annual basis.
+            <p>        At Grace, we are committed to offering high-quality treatments, premium products, and continued education to deliver the best possible service. As with most businesses, periodic price increases may occur, typically on an annual basis.
             </p>
             <p>We do our best to give advance notice of any upcoming changes, but please understand that pricing is subject to change without prior announcement.</p>
 
@@ -76,7 +76,7 @@ const TERMS_DATA = [
     },
     {
         id: 'medical', title: 'Medical Disclaimer', content: <FadeInScale className='mx-8'>
-            <p> All services provided by Elle Hive are cosmetic and non-medical in nature. They are not intended to diagnose, treat, or prevent any medical condition or disease.</p>
+            <p> All services provided by Grace are cosmetic and non-medical in nature. They are not intended to diagnose, treat, or prevent any medical condition or disease.</p>
             <p> You are responsible for disclosing:</p>
 
             <ul className='list-disc mx-8'>
@@ -89,7 +89,7 @@ const TERMS_DATA = [
     },
     {
         id: 'consent', title: 'Client Consent and Responsibility', content: <FadeInScale className='mx-8'>
-            <p>All clients must complete a consultation and consent form prior to treatment. By booking with Elle Hive, you confirm:
+            <p>All clients must complete a consultation and consent form prior to treatment. By booking with Grace, you confirm:
             </p>
             <ul className='list-disc mx-8'>
                 <li>You are sober and not under the influence of drugs or alcohol.</li>
@@ -98,10 +98,10 @@ const TERMS_DATA = [
             </ul>
         </FadeInScale>
     },
-    { id: 'images', title: 'Use of Client Images', content: <FadeInScale>With <span className='font-semibold'>your consent</span>, Elle Hive may use before-and-after photos of your treatment for marketing or educational purposes, such as social media or our website. If you do not consent, your images will not be used.</FadeInScale> },
+    { id: 'images', title: 'Use of Client Images', content: <FadeInScale>With <span className='font-semibold'>your consent</span>, Grace may use before-and-after photos of your treatment for marketing or educational purposes, such as social media or our website. If you do not consent, your images will not be used.</FadeInScale> },
     { id: 'privacy', title: 'Privacy and Data Protection', content: <FadeInScale>We respect your privacy and comply with UK GDPR regulations. Your personal and health information will only be used to provide services and will never be shared without your permission.</FadeInScale> },
-    { id: 'ip', title: 'Intellectual Property', content: <FadeInScale>All images, content, logos, and branding on this site belong to Elle Hive. You may not copy or use our materials without written consent.</FadeInScale> },
-    { id: 'liability', title: 'Limitation of Liability', content: <FadeInScale>Elle Hive is not liable for adverse reactions, dissatisfaction, or complications arising from any treatment—especially if aftercare guidelines are not followed.</FadeInScale> },
+    { id: 'ip', title: 'Intellectual Property', content: <FadeInScale>All images, content, logos, and branding on this site belong to Grace. You may not copy or use our materials without written consent.</FadeInScale> },
+    { id: 'liability', title: 'Limitation of Liability', content: <FadeInScale>Grace is not liable for adverse reactions, dissatisfaction, or complications arising from any treatment—especially if aftercare guidelines are not followed.</FadeInScale> },
     { id: 'governing', title: 'Governing Law', content: <FadeInScale>These Terms are governed by the laws of England and Wales. Any disputes shall be handled by the courts of England and Wales.</FadeInScale> },
     {
         id: 'giftcard', title: 'Gift Card and Voucher Policy', content: <FadeInScale className='mx-8'>
@@ -256,7 +256,7 @@ const TermsConditions: React.FC = () => {
 
                 <FadeInScale delay={0.2} className='space-y-4 text-sm lg:text-lg mb-10'>
                     <p className='font-semibold italic'>Effective Date: 01 April 2025</p>
-                    <p>Welcome to Elle Hive. By accessing or using our website and booking any services, you agree to be bound by the following Terms & Conditions. These terms are designed to ensure transparency and mutual respect between our clients and our practitioners.</p>
+                    <p>Welcome to Grace. By accessing or using our website and booking any services, you agree to be bound by the following Terms & Conditions. These terms are designed to ensure transparency and mutual respect between our clients and our practitioners.</p>
                     <p>(We may update this policy as needed - changes will be reflected on this page with a new effective date.)</p>
                 </FadeInScale>
                 <FadeInScale delay={0.3} className='border border-gray-200 rounded-lg overflow-hidden'>

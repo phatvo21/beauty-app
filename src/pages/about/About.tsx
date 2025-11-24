@@ -29,7 +29,7 @@ const About = () => {
             </div>
             <div className="py-6 lg:py-12 px-4 lg:px-20 gap-10 lg:gap-16 w-full bg-primary">
                 <div className='mx-auto max-w-7xl flex flex-col lg:flex-row gap-4 mb-8 lg:mb-12 items-center'>
-                    <h1 className='text-2xl lg:text-4xl mb-3 text-main'>The <span className='italic font-semibold'>Elle Hive</span> Journey</h1>
+                    <h1 className='text-2xl lg:text-4xl mb-3 text-main'>The <span className='italic font-semibold'>Grace</span> Journey</h1>
                 </div>
                 <div className='mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                     {/* Studies Card */}
@@ -63,7 +63,7 @@ const About = () => {
                             In 2018, I decided to blend my knowledge of beauty with my expertise in makeup, but with a twist. I decided to focus on makeup that lasts.
                         </p>
                         <p className='italic text-sm text-gray-700 font-semibold'>
-                            This is how Elle Hive came to life.
+                            This is how Grace came to life.
                         </p>
                     </FadeInScale>
                 </div>

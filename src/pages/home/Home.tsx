@@ -97,10 +97,10 @@ const Home = () => {
                         </FadeInScale>
 
                         <FadeInScale className="text-sm lg:text-base text-center lg:text-left font-medium tracking-wider text-neutral-700">
-                            Welcome to Elle Hive
+                            Welcome to Grace
                         </FadeInScale>
                         <FadeInScale className="text-sm lg:text-base leading-relaxed max-w-xl text-justify">
-                            Tucked away on the outskirts of Leeds, UK. **Elle Hive** is a refined beauty
+                            Tucked away on the outskirts of Leeds, UK. **Grace** is a refined beauty
                             space where transformation meets subtlety. Specialising in natural-looking
                             permanent makeup, results-driven facials, and skin-enhancing injectables,
                             each treatment is a quiet celebration of your unique beauty-delivered with
