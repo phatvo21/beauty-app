@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/footer/Footer";
+import SocialMediaFloat from "../components/social-media-float/SocialMediaFloat";
 
 const MainLayout: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const MainLayout: React.FC = () => {
         <Outlet />
       </main>
       <Footer />
+      <SocialMediaFloat />
     </>
   );
 };
