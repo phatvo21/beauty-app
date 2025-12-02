@@ -1,5 +1,5 @@
 import React from 'react';
-import imgSrc from '../../assets/images/IMG_0699.webp';
+import about1 from '../../assets/images/about/about1.png';
 import FadeInScale from '../../components/animations/FadeInScale.js';
 import awards01 from '../../assets/images/awards01.webp';
 import awards02 from '../../assets/images/awards02.webp';
@@ -9,21 +9,21 @@ import awards04 from '../../assets/images/awards04.webp';
 const About = () => {
     return (
         <>
-            <div className="bg-secondary">
-                <div className="flex flex-col md:flex-row relative">
-                    <FadeInScale className='w-full lg:w-1/2 h-[530px] relative' scaleFrom={0.9}>
+            <div className="bg-secondary py-6 lg:py-12 px-10 lg:px-20">
+                <div className="flex flex-col md:flex-row mx-auto max-w-7xl relative">
+                    <FadeInScale className='w-full lg:w-2/5 h-[530px] lg:h-[720px] relative' scaleFrom={0.9}>
                         <img
-                            src={imgSrc}
+                            src={about1}
                             alt="Egle Pociene"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-containt bg-[15%_70%]"
                         />
                         <div className='fluidImageOverlay'></div>
                     </FadeInScale>
                     <FadeInScale
-                        className="w-full lg:w-1/2 p-4 lg:p-10 flex flex-col justify-center gap-4 text-sm lg:text-base absolute lg:relative bottom-0 text-gray-300 lg:text-main"
+                        className="w-full lg:w-3/5 p-4 lg:p-10 flex flex-col justify-center gap-4 text-sm lg:text-base absolute lg:relative bottom-0 text-gray-300 lg:text-main"
                     >
-                        <p className='italic max-w-2xl mx-auto'>“I believe that everyone deserves to feel confident and beautiful, and I am proud to be able to help my clients achieve their goals.”</p>
-                        <div className='italic max-w-2xl mx-auto'>- Egle Pociene -</div>
+                        <p className='italic max-w-2xl text-sm lg:text-xl mx-auto'>“With experience in the beauty industry since 2012 , I aim to bring out the most natural beauty in my clients without turning them into someone else – Still you, but better.”</p>
+                        <div className='italic max-w-2xl text-sm lg:text-xl mx-auto'>- Grace -</div>
                     </FadeInScale>
                 </div>
             </div>
@@ -35,17 +35,27 @@ const About = () => {
                     {/* Studies Card */}
                     <FadeInScale delay={0.1} className='bg-secondary p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center min-h-[250px]'>
                         <h3 className='text-xl font-semibold text-main mb-3'>Studies</h3>
-                        <p className='text-sm text-gray-700'>
-                            My journey in the beauty and aesthetics industry began with a Bachelor's degree in cosmetology, where I combined my passion for skincare with the knowledge of medical practices.
-                        </p>
+                        <div className='text-sm text-gray-700 text-left'>
+                            <ul className="list-disc list-inside space-y-1">
+                                <li>2012: Makeup Artist course in Ho Chi Minh, Vietnam</li>
+                                <li>2012-2014: Makeup freelancer and founder of Khanh Tran Wedding Studio</li>
+                                <li>2014: Phibrows Microblading and Permanent Makeup courses in Ho Chi Minh</li>
+                                <li>2014-2024: Practising and instructing Makeup & Permanent Makeup in Khanh Tran Beauty Academy in VietNam</li>
+                                <li>2025: VTCT Level 4 Certificate in Micropigmentation in Leeds</li>
+                                <li>2025: Makeup Diploma Course from Elizabeth Sands Beauty School.</li>
+                            </ul>
+                        </div>
                     </FadeInScale>
 
                     {/* Skills Card */}
                     <FadeInScale delay={0.2} className='bg-secondary p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center min-h-[250px]'>
                         <h3 className='text-xl font-semibold text-main mb-3'>Skills</h3>
-                        <p className='text-sm text-gray-700'>
-                            I further refined my skills at a prestigious makeup academy in Lithuania, where I gained in-depth expertise in makeup artistry. This allowed me to master both fundamental techniques and advanced applications, enabling me to create tailored beauty solutions for every client.
-                        </p>
+                         <div className='text-sm text-gray-700 text-left'>
+                            <ul className="list-disc list-inside space-y-1">
+                                <li>Makeup: Day/ night makeup,  Event Makeup, Shooting Makeup, Bridal Makeup, SFX Makeup, Costume Makeup</li>
+                                <li>Permanent Makeup: Hairstroke Eyebrows, Ombre Eyebrows, Permanent Lipstick, Permanent Eyeliner</li>
+                            </ul>
+                        </div>
                     </FadeInScale>
 
                     {/* Experience Card */}

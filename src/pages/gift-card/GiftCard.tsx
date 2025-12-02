@@ -33,8 +33,11 @@ const GiftCard = () => {
             </FadeInScale>
             <div className='flex flex-col lg:flex-row gap-10 lg:gap-20'>
                 <FadeInScale delay={0.2} className='w-full lg:w-1/2 space-y-4 text-gray-700 text-sm lg:text-lg'>
-                    <p> Grace Gift Cards are available starting from £40. You can choose to receive a digital e-gift card via email, or pick up a physical card directly at our store. </p> <p> Each physical gift card is thoughtfully prepared — handwritten, beautifully presented, and placed inside an elegant wax-sealed envelope, making it a perfect gift for any special occasion. </p> <p> You can purchase your gift card in person at the store, or simply contact us via message to receive a quick payment link. </p> <p> During holiday seasons, we also offer limited-edition, themed gift card packaging to make your present even more special. </p>
-                </FadeInScale>
+                    <p>Grace Gift Cards are available starting from £50.
+                        You can pick up a physical card directly at our store.
+                        During holiday seasons, we also offer limited-edition, themed gift card packaging to make your present even more special.
+                        Please contact us in advance to receive the best service.
+                    </p>                </FadeInScale>
                 <div className='w-full lg:w-1/2 flex justify-center items-center'>
                     <FadeInScale className='relative aspect-[3/4] lg:aspect-[3/4] h-[400px] lg:h-[500px]'>
                         <video

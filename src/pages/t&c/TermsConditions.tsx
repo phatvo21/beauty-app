@@ -7,7 +7,7 @@ const TERMS_DATA = [
         title: 'General Information',
         content: (
             <FadeInScale className="px-8">
-                <p>Grace provides professional beauty and aesthetic services, including but not limited to permanent makeup, paramedical tattooing, facials, injectable treatments, and other beauty procedures. All treatments are carried out by trained professionals and require consultation and consent prior to the appointment.</p>
+                <p>Grace provides professional beauty and aesthetic services, including but not limited to permanent makeup, beauty procedures. All treatments are carried out by trained professionals and require consultation and consent prior to the appointment.</p>
                 <p>No Food, Guests, Children, or Pets Only the client receiving treatment is allowed in the studio. If you have a medical alert service dog, please let us know in advance. Emotional support animals and pets are not allowed.</p>
 
                 <h4 className="font-semibold mt-4">Restrictions</h4>
@@ -17,7 +17,7 @@ const TERMS_DATA = [
                 <p>Cosmetic tattooing usually requires multiple sessions. Results vary based on factors like skin type, age, lifestyle, and pre/post-care adherence.</p>
 
                 <h4 className="font-semibold mt-4">Previous Permanent Makeup or Cover-Ups</h4>
-                <p>If you've had work done by another artist, email photos for approval before booking (<a href="mailto:info@ellehive.com" className="text-blue-600 hover:underline">info@ellehive.com</a>). Bookings without prior approval will be canceled, and the cancellation policy will apply.</p>
+                <p>If you've had work done by another artist, email photos for approval before booking (<a href="mailto:gracebrows.uk@gmail.com" className="text-blue-600 hover:underline">gracebrows.uk@gmail.com</a>). Bookings without prior approval will be canceled, and the cancellation policy will apply.</p>
 
                 <h4 className="font-semibold mt-4">Appointment Duration</h4>
                 <p>Appointments are scheduled in blocks. Check your booking for the estimated time, and plan accordingly. Treatments cannot be interrupted.</p>
