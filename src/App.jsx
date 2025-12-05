@@ -11,8 +11,7 @@ import GiftCard from './pages/gift-card/GiftCard'
 import TermsConditions from './pages/t&c/TermsConditions'
 import Contact from './pages/contact/Contact'
 
-import Blog from './pages/blog/Blog'
-import BlogDetail from './pages/blog/BlogDetail'
+import Videos from './pages/videos/Videos'
 
 function App() {
   return (
@@ -28,11 +27,8 @@ function App() {
           <Route path="terms-and-conditions" element={<TermsConditions />} />
           <Route path="contact" element={<Contact />} />
 
-          {/* BLOG */}
-          <Route path="blog">
-            <Route index element={<Blog />} />
-            <Route path=":slug" element={<BlogDetail />} />
-          </Route>
+          {/* VIDEOS */}
+          <Route path="videos" element={<Videos />} />
 
         </Route>
       </Routes>

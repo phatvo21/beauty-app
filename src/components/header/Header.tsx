@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
   { name: "Gift Cards", href: "/giftcards" },
   { name: "T&C", href: "/terms-and-conditions" },
   { name: "Contact", href: "/contact" },
-  { name: "Blog", href: "/blog" },
+  { name: "Videos", href: "/videos" },
 ];
 
 type ChevronIconProps = {
@@ -159,38 +159,20 @@ type MobileNavItemProps = {
   item: NavItem;
   activePath: string;
   activeHash: string;
-  openDropdown: string | null;
-  setOpenDropdown: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-const MobileNavItem = ({ item, activePath, activeHash, openDropdown, setOpenDropdown }: MobileNavItemProps) => {
+const MobileNavItem = ({ item, activePath, activeHash }: MobileNavItemProps) => {
   const itemHref = item.slug ?? item.href ?? "";
   const itemPathPart = itemHref.split("#")[0];
-  const itemHashPart = itemHref.split("#")[1];
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
-
   const parentPath = normalizePath(itemPathPart || "");
-  const parentHash = itemHref.includes("#") ? `#${itemHashPart ?? ""}` : "";
-
-  const isHashOnly =
-    (item.href && item.href.trim().startsWith("#")) ||
-    (item.href && !item.slug && item.href.includes("#") && (!item.href.split("#")[0] || item.href.split("#")[0] === "/"));
-
+  
   let isActive = false;
-
   if (item.children) {
     const isParentPathMatch = parentPath === activePath;
     const isChildRouteActive = item.children.some(child =>
       normalizePath(child.href.split("#")[0]) === activePath
     );
-
     isActive = isParentPathMatch || isChildRouteActive;
-
-  } else if (isHashOnly) {
-    if (parentHash) {
-      isActive = parentHash === activeHash;
-    }
   } else {
     if (parentPath) {
       isActive = parentPath === activePath;
@@ -199,68 +181,148 @@ const MobileNavItem = ({ item, activePath, activeHash, openDropdown, setOpenDrop
     }
   }
 
-  const isOpen = openDropdown === (item.slug || item.href);
-
-  useEffect(() => {
-    if (isOpen && buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setDropdownPosition({
-        top: rect.bottom + window.scrollY + 4,
-        left: rect.left + window.scrollX
-      });
-    }
-  }, [isOpen]);
-
   if (item.children) {
     return (
-      <>
-        <div className="mobile-nav-item relative z-50">
-          <button
-            ref={buttonRef}
-            onClick={(e) => {
-              e.preventDefault();
-              const newValue = isOpen ? null : (item.slug || item.href || "");
-              setOpenDropdown(newValue);
-            }}
-            className={`smooth-underline hover:text-main px-2 py-1 rounded-md transition duration-150 flex items-center whitespace-nowrap ${isActive ? "active text-main" : ""
-              }`}
-          >
-            {item.name}
-            <ChevronIcon isOpen={isOpen} />
-          </button>
-        </div>
-        {isOpen && (
-          <div 
-            className="mobile-dropdown fixed w-48 bg-primary rounded-xl shadow-2xl py-2 z-[9999]"
-            style={{
-              top: `${dropdownPosition.top}px`,
-              left: `${dropdownPosition.left}px`
-            }}
-          >
-            {item.children.map((child) => (
-              <Link
-                key={child.name}
-                to={child.href}
-                onClick={() => setOpenDropdown(null)}
-                className="smooth-underline block py-2 hover:text-main px-3 rounded-lg transition duration-150 text-xs"
-              >
-                {child.name}
-              </Link>
-            ))}
-          </div>
-        )}
-      </>
+      <Link
+        to={item.slug || "/"}
+        className={`smooth-underline hover:text-main px-2 py-1 rounded-md transition duration-150 ${
+          isActive ? "text-main active" : ""
+        }`}
+      >
+        {item.name}
+      </Link>
     );
   }
 
   return (
     <Link
       to={item.href || "/"}
-      className={`smooth-underline hover:text-main px-2 py-1 rounded-md transition duration-150 whitespace-nowrap ${isActive ? "text-main active" : ""
-        }`}
+      className={`smooth-underline hover:text-main py-1 rounded-md transition duration-150 ${
+        isActive ? "text-main active" : ""
+      }`}
     >
       {item.name}
     </Link>
+  );
+};
+
+type MobileMenuProps = {
+  navItems: NavItem[];
+  activePath: string;
+  activeHash: string;
+};
+
+const MobileMenu = ({ navItems, activePath, activeHash }: MobileMenuProps) => {
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
+  // Tự động mở submenu nếu đang ở trang đó
+  useEffect(() => {
+    const activeItem = navItems.find((item) => {
+      if (!item.children) return false;
+      const itemHref = item.slug ?? item.href ?? "";
+      const itemPathPart = itemHref.split("#")[0];
+      const parentPath = normalizePath(itemPathPart || "");
+      const isParentPathMatch = parentPath === activePath;
+      const isChildRouteActive = item.children.some(child =>
+        normalizePath(child.href.split("#")[0]) === activePath
+      );
+      return isParentPathMatch || isChildRouteActive;
+    });
+
+    if (activeItem?.name) {
+      setOpenSubmenu(activeItem.name);
+    }
+  }, [activePath, navItems]);
+
+  const toggleSubmenu = (itemName: string | undefined) => {
+    if (openSubmenu === itemName) {
+      setOpenSubmenu(null);
+    } else {
+      setOpenSubmenu(itemName || null);
+    }
+  };
+
+  return (
+    <div>
+      {/* Main Menu */}
+      <nav className="overflow-x-auto">
+        <div className="flex items-center justify-between text-sm font-medium whitespace-nowrap">
+          {navItems.map((item) => {
+            const itemHref = item.slug ?? item.href ?? "";
+            const itemPathPart = itemHref.split("#")[0];
+            const parentPath = normalizePath(itemPathPart || "");
+            
+            let isActive = false;
+            if (item.children) {
+              const isParentPathMatch = parentPath === activePath;
+              const isChildRouteActive = item.children.some(child =>
+                normalizePath(child.href.split("#")[0]) === activePath
+              );
+              isActive = isParentPathMatch || isChildRouteActive;
+            } else {
+              if (parentPath) {
+                isActive = parentPath === activePath;
+              } else {
+                isActive = activePath === "/";
+              }
+            }
+
+            if (item.children) {
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => toggleSubmenu(item.name)}
+                  className={`smooth-underline hover:text-main px-2 py-1 rounded-md transition duration-150 flex items-center gap-1 ${
+                    isActive ? "text-main active" : ""
+                  }`}
+                >
+                  {item.name}
+                  <ChevronIcon isOpen={openSubmenu === item.name} />
+                </button>
+              );
+            }
+
+            return (
+              <MobileNavItem
+                key={item.name}
+                item={item}
+                activePath={activePath}
+                activeHash={activeHash}
+              />
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Submenu - hiển thị ngang bên dưới main menu giống desktop */}
+      {openSubmenu && (
+        <nav className="absolute bg-primary w-full mt-2 overflow-x-auto -mx-3 px-3">
+          <div className="flex flex-col gap-2 text-sm font-medium whitespace-nowrap">
+            {navItems
+              .find(item => item.name === openSubmenu)
+              ?.children?.map((child) => {
+                const childPathPart = child.href.split("#")[0];
+                const childPath = normalizePath(childPathPart || "");
+                const childHash = child.href.split("#")[1] ? `#${child.href.split("#")[1]}` : "";
+                const childIsActive = childPath === activePath || (childHash && childHash === activeHash);
+                
+                return (
+                  <Link
+                    key={child.name}
+                    to={child.href}
+                    onClick={() => setOpenSubmenu(null)}
+                    className={`hover:text-main px-2 py-1 rounded-md transition duration-150 ${
+                      childIsActive ? "text-main active" : ""
+                    }`}
+                  >
+                    {child.name}
+                  </Link>
+                );
+              })}
+          </div>
+        </nav>
+      )}
+    </div>
   );
 };
 
@@ -268,38 +330,19 @@ const Header = () => {
   const location = useLocation();
   const [activePath, setActivePath] = useState("/");
   const [activeHash, setActiveHash] = useState("");
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const path = location.pathname ? location.pathname : "/";
     const normalized = path === "/" ? "/" : path.replace(/\/+$/, "");
     setActivePath(normalized);
     setActiveHash(location.hash || "");
-    // Đóng submenu khi route thay đổi
-    setOpenDropdown(null);
   }, [location.pathname, location.hash]);
-
-  // Đóng submenu khi click ra ngoài
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest('.mobile-nav-item') && !target.closest('.mobile-dropdown')) {
-        setOpenDropdown(null);
-      }
-    };
-
-    if (openDropdown) {
-      document.addEventListener('click', handleClickOutside);
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }
-  }, [openDropdown]);
 
   return (
     <header className="bg-primary shadow-lg sticky top-0 z-50 rounded-b-xl font-Lora overflow-visible">
       <div className="w-full mx-auto px-3 lg:px-20 xl:px-40 overflow-visible">
-        <div className="flex justify-between items-center h-24">
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex justify-between items-center h-24">
           <div className="flex-shrink-0">
             <Link to="/" className="block w-24 lg:w-32">
               <FadeInScale>
@@ -312,7 +355,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className="hidden lg:block">
+          <nav>
             <div className="flex items-baseline gap-5 text-base font-medium">
               {navItems.map((item) => (
                 <DesktopNavItem
@@ -324,26 +367,30 @@ const Header = () => {
               ))}
             </div>
           </nav>
-
-          <div className="lg:hidden">
-            <p className="text-lg italic font-medium">Still you but better</p>
-          </div>
         </div>
 
-        <nav className="lg:hidden w-full pb-3 relative z-50">
-          <div className="flex items-baseline gap-2 text-xs font-medium overflow-x-auto" style={{ overflowY: 'visible' }}>
-            {navItems.map((item) => (
-              <MobileNavItem
-                key={item.name}
-                item={item}
-                activePath={activePath}
-                activeHash={activeHash}
-                openDropdown={openDropdown}
-                setOpenDropdown={setOpenDropdown}
-              />
-            ))}
+        {/* Mobile Layout */}
+        <div className="lg:hidden pb-2">
+          <div className="flex justify-between items-center">
+            <div className="flex-shrink-0">
+              <Link to="/" className="block w-20 lg:w-24">
+                <FadeInScale>
+                  <img
+                    className="h-auto w-full rounded-lg"
+                    src={logoBg}
+                    alt="Elle Logo"
+                  />
+                </FadeInScale>
+              </Link>
+            </div>
+            <div>
+              <p className="text-lg italic font-medium text-[#bf9c6b]">Still you but better</p>
+            </div>
           </div>
-        </nav>
+          
+          {/* Mobile Horizontal Menu */}
+          <MobileMenu navItems={navItems} activePath={activePath} activeHash={activeHash} />
+        </div>
       </div>
     </header>
   );
